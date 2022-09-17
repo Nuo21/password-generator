@@ -50,6 +50,20 @@ function generatePassword() {
     //Testing
     console.log(passChars);
   }
+
+  //If no criteria is chosen
+  if (passChars.length == 0) {
+    alert("Error! Please select AT LEAST one criteria.");
+  }
+
+  //Variable to store the generated password
+  var randomPassword = [];
+
+  for (var i = 0; i < passLength; i ++) {
+    var randomChar = passChars[Math.floor(Math.random() * passChars.length)];
+    randomPassword.push(randomChar);
+  }
+  return randomPassword.join("");
 }
 
 // Write password to the #password input
