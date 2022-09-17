@@ -52,17 +52,46 @@ function generatePassword() {
   }
 
   //If no criteria is chosen
-  if (passChars.length == 0) {
+  while (passChars.length == 0) {
     alert("Error! Please select AT LEAST one criteria.");
+    
+    if (confirm("Do you want your password to contain: Numbers")) {
+      passChars = passChars.concat(numbers);
+      //Testing
+      console.log(passChars);
+    }
+  
+    //Uppercase criteria
+    if (confirm("Do you want your password to contain: Uppercase letters")) {
+      passChars = passChars.concat(upperChars);
+      //Testing
+      console.log(passChars);
+    }
+  
+    //Lowercase criteria
+    if (confirm("Do you want your password to contain: Lowercase letters")) {
+      passChars = passChars.concat(lowerChars);
+      //Testing
+      console.log(passChars);
+    }
+  
+    //Special character criteria
+    if (confirm("Do you want your password to contain: Special characters")) {
+      passChars = passChars.concat(specialChars);
+      //Testing
+      console.log(passChars);
+    }
   }
 
   //Variable to store the generated password
   var randomPassword = [];
 
+  //Generates random character from array based on user criteria then adds it to new array that will be their password
   for (var i = 0; i < passLength; i ++) {
     var randomChar = passChars[Math.floor(Math.random() * passChars.length)];
     randomPassword.push(randomChar);
   }
+  //Returns the password and used join method to remove the commas
   return randomPassword.join("");
 }
 
