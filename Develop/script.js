@@ -16,10 +16,39 @@ function generatePassword() {
   var passLength = prompt("Please enter a number between 8 and 128. This will determine the length of your password.");
 
   //Different responses depending on user input
-  if (!passLength || passLength < 8 || passLength > 128) {
+  while (!passLength || passLength < 8 || passLength > 128) {
     alert("Error! Password length must be between 8 and 128 characters. Please try again.");
-  } else {
-    alert('We will now go through different criteria options for your password. Please click "Confirm" if you want it and "Cancel" if you do not.');
+    passLength = prompt("Please enter a number between 8 and 128. This will determine the length of your password.");
+  }
+  
+  alert('We will now go through different criteria options for your password. Please click "OK" if you would like it applied and "Cancel" if you do not.');
+  
+  //Number criteria
+  if (confirm("Do you want your password to contain: Numbers")) {
+    passChars = passChars.concat(numbers);
+    //Testing
+    console.log(passChars);
+  }
+
+  //Uppercase criteria
+  if (confirm("Do you want your password to contain: Uppercase letters")) {
+    passChars = passChars.concat(upperChars);
+    //Testing
+    console.log(passChars);
+  }
+
+  //Lowercase criteria
+  if (confirm("Do you want your password to contain: Lowercase letters")) {
+    passChars = passChars.concat(lowerChars);
+    //Testing
+    console.log(passChars);
+  }
+
+  //Special character criteria
+  if (confirm("Do you want your password to contain: Special characters")) {
+    passChars = passChars.concat(specialChars);
+    //Testing
+    console.log(passChars);
   }
 }
 
