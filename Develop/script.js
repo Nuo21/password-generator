@@ -15,10 +15,21 @@ function generatePassword() {
   //Creating a variable that will store the user's preference when promted about the password length
   var passLength = prompt("Please enter a number between 8 and 128. This will determine the length of your password.");
 
-  //Different responses depending on user input
-  while (!passLength || passLength < 8 || passLength > 128) {
-    alert("Error! Password length must be between 8 and 128 characters. Please try again.");
+  //To make sure user inputs a valid number
+  /*while (isNaN(passLength)) {
+    alert("Error! Please enter a valid number.");
     passLength = prompt("Please enter a number between 8 and 128. This will determine the length of your password.");
+  }*/
+
+  //Different responses depending on user input
+  while (isNaN(passLength) || !passLength || passLength < 8 || passLength > 128) {
+    if (isNaN(passLength)) {
+      alert("Error! Please enter a valid number.");
+      passLength = prompt("Please enter a number between 8 and 128. This will determine the length of your password.");
+    } else {
+      alert("Error! Password length must be between 8 and 128 characters. Please try again.");
+      passLength = prompt("Please enter a number between 8 and 128. This will determine the length of your password.");
+    }
   }
   
   alert('We will now go through different criteria options for your password. Please click "OK" if you would like it applied and "Cancel" if you do not.');
