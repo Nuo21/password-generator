@@ -91,6 +91,12 @@ function generatePassword() {
     var randomChar = passChars[Math.floor(Math.random() * passChars.length)];
     randomPassword.push(randomChar);
   }
+
+  //Clears array for next password generation
+  passChars = [];
+  //Testing
+  console.log(passChars);
+
   //Returns the password and used join method to remove the commas
   return randomPassword.join("");
 }
