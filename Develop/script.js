@@ -34,36 +34,43 @@ function generatePassword() {
   
   alert('We will now go through different criteria options for your password. Please click "OK" if you would like it applied and "Cancel" if you do not.');
   
-  //Number criteria
-  if (confirm("Do you want your password to contain: Numbers")) {
-    passChars = passChars.concat(numbers);
-    //Testing
-    console.log(passChars);
-  }
+do {
+    //Number criteria
+    if (confirm("Do you want your password to contain: Numbers")) {
+      passChars = passChars.concat(numbers);
+      //Testing
+      console.log(passChars);
+    }
+  
+    //Uppercase criteria
+    if (confirm("Do you want your password to contain: Uppercase letters")) {
+      passChars = passChars.concat(upperChars);
+      //Testing
+      console.log(passChars);
+    }
+  
+    //Lowercase criteria
+    if (confirm("Do you want your password to contain: Lowercase letters")) {
+      passChars = passChars.concat(lowerChars);
+      //Testing
+      console.log(passChars);
+    }
+  
+    //Special character criteria
+    if (confirm("Do you want your password to contain: Special characters")) {
+      passChars = passChars.concat(specialChars);
+      //Testing
+      console.log(passChars);
+    }
 
-  //Uppercase criteria
-  if (confirm("Do you want your password to contain: Uppercase letters")) {
-    passChars = passChars.concat(upperChars);
-    //Testing
-    console.log(passChars);
-  }
-
-  //Lowercase criteria
-  if (confirm("Do you want your password to contain: Lowercase letters")) {
-    passChars = passChars.concat(lowerChars);
-    //Testing
-    console.log(passChars);
-  }
-
-  //Special character criteria
-  if (confirm("Do you want your password to contain: Special characters")) {
-    passChars = passChars.concat(specialChars);
-    //Testing
-    console.log(passChars);
-  }
+    //If no criteria is chosen
+    if (passChars.length == 0) {
+      alert("Error! Please select AT LEAST one criteria.");
+    }
+}while(passChars.length == 0)
 
   //If no criteria is chosen
-  while (passChars.length == 0) {
+  /*while (passChars.length == 0) {
     alert("Error! Please select AT LEAST one criteria.");
     
     if (confirm("Do you want your password to contain: Numbers")) {
@@ -92,7 +99,7 @@ function generatePassword() {
       //Testing
       console.log(passChars);
     }
-  }
+  }*/
 
   //Variable to store the generated password
   var randomPassword = [];
