@@ -7,3 +7,7 @@ Password generators are used to create strong randomized passwords. People tend 
 ## Screenshot
 
 ![passGenSS](https://user-images.githubusercontent.com/111789697/191157293-30ad2d4d-9ce1-4f31-b86d-91e6166c3fb7.png)
+
+## Live Deploy Link
+
+https://nuo21.github.io/password-generator/
