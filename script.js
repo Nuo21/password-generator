@@ -15,13 +15,7 @@ function generatePassword() {
   //Creating a variable that will store the user's preference when promted about the password length
   var passLength = prompt("Please enter a number between 8 and 128. This will determine the length of your password.");
 
-  //To make sure user inputs a valid number
-  /*while (isNaN(passLength)) {
-    alert("Error! Please enter a valid number.");
-    passLength = prompt("Please enter a number between 8 and 128. This will determine the length of your password.");
-  }*/
-
-  //Different responses depending on user input
+  //To make sure user inputs are valid
   while (isNaN(passLength) || !passLength || passLength < 8 || passLength > 128) {
     if (isNaN(passLength)) {
       alert("Error! Please enter a valid number.");
@@ -68,38 +62,6 @@ do {
       alert("Error! Please select AT LEAST one criteria.");
     }
 }while(passChars.length == 0)
-
-  //If no criteria is chosen
-  /*while (passChars.length == 0) {
-    alert("Error! Please select AT LEAST one criteria.");
-    
-    if (confirm("Do you want your password to contain: Numbers")) {
-      passChars = passChars.concat(numbers);
-      //Testing
-      console.log(passChars);
-    }
-  
-    //Uppercase criteria
-    if (confirm("Do you want your password to contain: Uppercase letters")) {
-      passChars = passChars.concat(upperChars);
-      //Testing
-      console.log(passChars);
-    }
-  
-    //Lowercase criteria
-    if (confirm("Do you want your password to contain: Lowercase letters")) {
-      passChars = passChars.concat(lowerChars);
-      //Testing
-      console.log(passChars);
-    }
-  
-    //Special character criteria
-    if (confirm("Do you want your password to contain: Special characters")) {
-      passChars = passChars.concat(specialChars);
-      //Testing
-      console.log(passChars);
-    }
-  }*/
 
   //Variable to store the generated password
   var randomPassword = [];
